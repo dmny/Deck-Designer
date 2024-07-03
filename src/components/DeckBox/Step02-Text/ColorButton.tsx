@@ -2,9 +2,9 @@ function ColorButton(props: any) {
   return (
     <button
     className="text-color-option"
-    value={props.textColorData.hex}
+    value={ props.textColorData.hex }
     style={{ background: props.textColorData.hex }}
-    onClick={()=> props.handleTextColorChange( event.target.value )}>
+    onClick={(e)=> props.handleTextColorChange( e.target.value )}>
     </button>
   )
 }

@@ -8,10 +8,10 @@ import './App.css'
 export default function Home() {  
   const stepHeader = StepData.map( steps => steps.header );
   const [page, setPage] = useState(0);
-  const [deckColor, setDeckColor] = useState("/NaturalDeck.jpg");
-  const [textColor, setTextColor] = useState("#000");
+  const [deckColor, setDeckColor] = useState("NaturalDeck.jpg");
+  const [deckTextColor, setDeckTextColor] = useState("#000");
   const [deckWidth, setDeckWidth] = useState("8.0 in");
-  const [deckText1, setDeckText1] = useState("YOUR TEXT HERE");
+  const [deckText, setDeckText] = useState("YOUR TEXT HERE");
   const [textInit, setTextInit] = useState( false );
 
   function handleChange(value: string, trait: string) {
@@ -30,31 +30,36 @@ export default function Home() {
   }
 
   function handleTextColorChange(value: string) {
-        setTextColor(value);
-        // console.log(value);
+    setDeckTextColor(value);
   };
 
-  function handleCopyChange(field: string, e: React.ChangeEvent<HTMLInputElement>) {
+  function handleCopyChange(e: React.ChangeEvent<HTMLInputElement>) {
     !textInit && setTextInit(true);
-    const value = e.target.value;
-    // console.log(event.target);
-    switch (field) {
-      case 'deckText1':
-        setDeckText1(value);
-        break;
-      case 'deckText2':
-        // setDeckText2(value);
-        break;
-    }
+    setDeckText(e.target.value);
   }
+
+  // When second text field is added
+  // function handleCopyChange(field: string, e: React.ChangeEvent<HTMLInputElement>) {
+  //   !textInit && setTextInit(true);
+  //   const value = e.target.value;
+  //   switch (field) {
+  //     case 'deckText':
+  //       setDeckText(value);
+  //       break;
+  //     case 'deckText2':
+  //       // setDeckText2(value);
+  //       break;
+  //   }
+  // }
+
   return (
     <div className="config-container">
         <Header page={ page } steps={ StepData } stepHeader={ stepHeader } />
         <DeckBox
           deckWidth={ deckWidth }
           deckColor={ deckColor }
-          deckText={ deckText1 }
-          textColor={textColor}
+          deckText={ deckText }
+          deckTextColor={ deckTextColor }
           page={ page }
           textInit={ textInit }
           handleChange={ handleChange }
