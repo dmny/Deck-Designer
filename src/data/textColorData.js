@@ -45,7 +45,7 @@ const textColorData = [
     },
     {
         color: "Charcoal",
-        hex: "#242424" 
+        hex: "#333" 
     },
     {
         color: "Gray",

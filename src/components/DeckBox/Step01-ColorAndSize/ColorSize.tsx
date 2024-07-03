@@ -1,8 +1,8 @@
-import DropDown from '../components/dropDown';
-import colorData from '../data/colorData';
-import widthData from '../data/widthData';
+import DropDown from '../../dropDown';
+import colorData from '../../../data/colorData';
+import widthData from '../../../data/widthData';
 
-export default function ColorSize(props) {
+export default function ColorSize(props: any) {
   
     return (
       <div className="options">
