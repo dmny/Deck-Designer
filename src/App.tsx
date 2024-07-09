@@ -9,7 +9,7 @@ import './App.css'
 export default function Home() {  
   const stepHeader = StepData.map( steps => steps.header );
 
-  const [ page, setPage ] = useState(4);
+  const [ page, setPage ] = useState(0);
   function handlePage (value: number) {
     setPage(value);
   }
