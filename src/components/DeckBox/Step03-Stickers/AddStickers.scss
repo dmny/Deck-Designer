@@ -1,0 +1,38 @@
+.stickers {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .coming-soon {
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    background: darkred;
+    top:0;
+    left: 0;
+    z-index: 4000;
+  }
+  
+  .blindSticker {
+    width: 12rem;
+  }
+  
+  .toySticker {
+    width: 12rem;
+  }
+  
+  .esSticker {
+    width: 4rem;
+  }
+
+  .screamingHandSticker {
+    width: 8rem;
+  }

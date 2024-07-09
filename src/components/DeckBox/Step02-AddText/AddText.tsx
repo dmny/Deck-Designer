@@ -1,4 +1,5 @@
 import ColorPicker from './ColorPicker';
+import './AddText.scss';
 
 export default function DeckText(props: any) {
   return (
@@ -12,12 +13,13 @@ export default function DeckText(props: any) {
           placeholder={ props.deckText }
           name="deckText"
           value={ props.deckText }
-          onChange={ (e) => props.handleCopyChange(e) }
-          // When second text field is added
-          // onChange={ (e) => props.handleCopyChange("deckText", e) }
+          onChange={ (e) => props.handleTextChange(e) }
         />
       </div>
-      <ColorPicker handleTextColorChange={ props.handleTextColorChange } deckTextColor={ props.deckTextColor } />
+      <ColorPicker
+        handleTextColorChange={ props.handleTextColorChange }
+        deckTextColor={ props.deckTextColor }
+      />
     </div>
   );
 };

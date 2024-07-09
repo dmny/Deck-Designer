@@ -1,0 +1,88 @@
+.deck-box-wrapper2, .build-container, .color-picker {
+  filter: drop-shadow((8px 8px 8px) rgba(0, 0, 0, 0.5));
+}
+
+.gradient-overlay-dark {
+  width: 100%;
+  height: 100%;
+  z-index: 800;
+  background: linear-gradient(90deg, rgba(0,0,0,0.35) 16%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 82%, rgba(0,0,0,0.35) 86%);
+}
+.gradient-overlay-light {
+  width: 100%;
+  height: 100%;
+  z-index: 900;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 16%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0) 25%, rgba(255,255,255,0) 77%, rgba(255,255,255,0.2) 82%, rgba(255,255,255,0) 86%);
+}
+
+.deckbox {
+  position: relative;
+  overflow: hidden;
+  margin: 0 2rem 2rem;
+  padding: 0;
+  width: 900px;
+  height: 294px;
+  display: grid;
+  place-items: center;
+  clip-path: path('M750.3,37.85l-582.42-1.21S20.34,31.15,20.34,143.44c0,0-7.05,116.39,142.69,116.39l582.42-2.42s134.36,9.34,134.36-116.8c0,0,3.64-102.75-129.51-102.75Z');
+}
+
+.deckbox > * {
+  grid-area: stack;
+}
+
+.width-text {
+  padding: 2rem 1rem;;
+  margin: 0;
+  box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
+  z-index: 2000;
+  background:  rgba(0,0,0,0.75);
+  border-radius: 0.5rem;
+  line-height: 1.2rem;
+  border: 1px solid #fff;
+}
+
+.width-text p {
+  font-size: 2.5rem;
+  padding: 0;
+  margin: 0;
+  line-height: 1.2rem;
+}
+
+
+.text-box {
+  /* background: red; */
+  /* background: rgba(0,0,0,0.5); */
+  height: 294px;
+  width: 900px;
+  margin: 0;
+  padding: 0.2% 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  color: #242424;
+  clip-path: path('M746.24,40.84l-573.85-1.18S24.51,34.31,24.51,143.64c0,0-7.06,113.32,143.02,113.32l573.85-2.36s134.66,9.09,134.66-113.72c0,0,3.65-100.04-129.8-100.04Z');
+}
+
+.text-box > div {
+  /* background: rgba(0,0,0,0.5); */
+  width: 830px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  line-height: normal;
+  align-items: center;
+  justify-content: center;
+  user-select: none; 
+  font-weight: 900;
+}
+
+.bolt-holes {
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}

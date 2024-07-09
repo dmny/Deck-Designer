@@ -1,6 +1,6 @@
 const stepData = [
     {
-        header: "Welcome. Let's get you started on your custom skate deck!",
+        header: "Welcome! Let's get you started on your custom skate deck!",
     },
     {
         header: "Choose Your Deck's Color and Size.",
