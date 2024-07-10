@@ -4,27 +4,25 @@ import './AddTrucks.scss'
 
 export default function AddAccessories( props: any ) {
 
-  // Get array of Truck brands from data file
-  let brands = truckData.map(item => {
+  // Get array of Truck brands from data file.
+  let brands: any = truckData.map(item => {
     return { label: item.brand };
   });
 
-  // Check if truck brand is already chosen, if not set a random brand
+  // Check if a truck brand is already chosen, if not set a random brand.
   function random(min: number, max: number) {
     return Math.floor((Math.random())*(max-min+1))+min;
   }
-
-  let choice = ( !props.deckAttributes.truckBrand ) ?
-    brands[random( 0, brands.length - 1 )].label :
-    props.deckAttributes.truckBrand;
+  let choice: string = ( !props.deckAttributes.truckBrand )
+    ? brands[random( 0, brands.length - 1 )].label
+    : props.deckAttributes.truckBrand;
     
-  // Get array of truck widths for chosen/set truck brand
+  // Get array of truck widths for chosen/set truck brand.
   const truckChoice = truckData.filter( obj => {
     return obj.brand === choice;
   });
-
   let widths: any = truckChoice.map( obj => obj.widths );
-    widths = widths[0].map( (item: { manuWidth: string; actualWidth: string; }) => {
+  widths = widths[0].map( (item: { manuWidth: string; actualWidth: string; }) => {
     return {
       label: item.manuWidth,
       value: item.actualWidth
@@ -33,7 +31,7 @@ export default function AddAccessories( props: any ) {
 
   return (
     <div className="trucks">
-      <div className="truckImg"><img src= { choice + ".png" } alt="" /></div>
+      <div className="truckImg"><img src= { `${choice}.png` } alt="" /></div>
       <div className="truck-options">
         <span>
           <p>Truck Brand:</p>
@@ -49,11 +47,14 @@ export default function AddAccessories( props: any ) {
           <DropDown
             options={ widths }
             // selected={ props.deckAttributes.truckWidth }
-            selected={ (!props.deckAttributes.truckWidth ? props.deckAttributes.deckWidth : props.deckAttributes.truckWidth)}
+            selected={(
+              !props.deckAttributes.truckWidth
+              ? props.deckAttributes.deckWidth
+              : props.deckAttributes.truckWidth
+            )}
             handleChange={ props.handleChange }
             targetAttribute="truckWidth"
           />
-          
         </span>
         <span>
           <button>Add to cart</button>

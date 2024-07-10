@@ -1,7 +1,7 @@
 import './dropDown.scss';
 
 export default function DropDown(props: any) {
-  console.log(props.selected)
+  // console.log(props.selected)
   return (
       <select className="dropdown"
         name={ props.targetElement }
