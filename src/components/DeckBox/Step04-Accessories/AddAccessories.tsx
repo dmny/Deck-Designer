@@ -1,14 +1,26 @@
-import AddTrucks from './AddTrucks';
+import AddAccessory from "./AddAccessory";
+import "./addAccessories.scss";
 
-export default function AddAccessories(props: any) {
+interface AddAccessoriesProps {
+  deckAttributes: {
+    deckWidth: string;
+    truckBrand: string;
+    truckWidth: string;
+  };
+  handleChange: (value: string, targetAttribute: string) => void;
+  handleCartChange(cartItem: string): void;
+}
+
+export default function AddAccessories(props: AddAccessoriesProps) {
   return (
-    <>
-    <div className="options">
-      <AddTrucks
-        deckAttributes={ props.deckAttributes }
-        handleChange={ props.handleChange }
-      />
+    <div className="add-accessories">
+      <div className="options">
+        <AddAccessory
+          deckAttributes={props.deckAttributes}
+          handleChange={props.handleChange}
+          handleCartChange={props.handleCartChange}
+        />
+      </div>
     </div>
-  </>
   );
-};
+}

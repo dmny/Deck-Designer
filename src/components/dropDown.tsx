@@ -1,19 +1,35 @@
-import './dropDown.scss';
+import "./dropDown.scss";
 
-export default function DropDown(props: any) {
-  // console.log(props.selected)
+// type ItemOptions = {
+//   label?: string;
+//   value: string;
+// };
+
+interface DropDownProps {
+  targetElement: string;
+  selected: string;
+  targetAttribute: string;
+  options: object[];
+  handleChange: (value: string, targetAttribute: string) => void;
+}
+
+export default function DropDown(props: DropDownProps) {
+  console.log(props.options);
   return (
-      <select className="dropdown"
-        name={ props.targetElement }
-        value={ props.selected }
-        onChange={(e)=> props.handleChange( e.target.value, props.targetAttribute )} >
-              { props.options.map((option: any, i: number) =>
-                <option
-                  key={i}
-                  value={option.value}>
-                    { !option.label ? option.value : option.label }
-                </option>
-              )}
-      </select>
+    <select
+      className="dropdown"
+      name={props.targetElement}
+      value={props.selected}
+      onChange={(e) =>
+        props.handleChange(e.target.value, props.targetAttribute)
+      }
+    >
+      {/* This : any must Die!!! */}
+      {props.options.map((itemOptions: any, i: number) => (
+        <option key={i} value={itemOptions.value}>
+          {!itemOptions.label ? itemOptions.value : itemOptions.label}
+        </option>
+      ))}
+    </select>
   );
 }

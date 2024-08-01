@@ -1,11 +1,19 @@
-function ColorButton(props: any) {
+interface ClrBtnProps {
+  handleTextColorChange(hex: string): void;
+  textColorData: {
+    color: string;
+    hex: string;
+  };
+}
+
+function ColorButton(props: ClrBtnProps) {
   return (
     <button
       className="text-color-option"
-      value={ props.textColorData.hex }
+      value={props.textColorData.hex}
       style={{ background: props.textColorData.hex }}
-      onClick={ (e)=> props.handleTextColorChange( e.target.value ) }
+      onClick={() => props.handleTextColorChange(props.textColorData.hex)}
     ></button>
-  )
+  );
 }
-export default ColorButton
+export default ColorButton;
